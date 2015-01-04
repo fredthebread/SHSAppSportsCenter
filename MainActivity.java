@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.graphics.drawable.shapes.Shape;
@@ -165,7 +166,6 @@ public class MainActivity extends ActionBarActivity {
         scrollText.setText("No timeline to display currently.");
         scrollText.setTextColor(0xff000000);
         scrollText.setSingleLine(false);
-        scrollText.setMaxLines(100);
         scroll.addView(scrollText);
 
         main.addView(choosers);
@@ -173,6 +173,8 @@ public class MainActivity extends ActionBarActivity {
         main.addView(scroll);
         
         setContentView(main);
+        
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     
     public void goButtonClicked(View v){
